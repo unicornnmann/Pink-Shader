@@ -210,8 +210,8 @@ ColorCorrection.Parent = Lighting
 -- Sun Rays (volumetric light shafts)
 local SunRays = Instance.new("SunRaysEffect")
 SunRays.Enabled = false
-SunRays.Intensity = 0.35
-SunRays.Spread = 0.75
+SunRays.Intensity = 0
+SunRays.Spread = 0
 SunRays.Parent = Lighting
 
 -- Depth of Field (cinematic blur)
