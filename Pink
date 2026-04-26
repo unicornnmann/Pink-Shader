@@ -157,7 +157,7 @@ Lighting:ClearAllChildren()
 -- Lighting Properties
 Lighting.Ambient = Color3.fromRGB(100, 65, 115)
 Lighting.OutdoorAmbient = Color3.fromRGB(160, 110, 180)
-Lighting.Brightness = 2.4  -- slightly dimmed from 3
+Lighting.Brightness = 2  -- slightly dimmed from 3
 Lighting.ColorShift_Bottom = Color3.fromRGB(255, 160, 210)
 Lighting.ColorShift_Top = Color3.fromRGB(200, 130, 240)
 Lighting.EnvironmentDiffuseScale = 1
@@ -209,14 +209,14 @@ ColorCorrection.Parent = Lighting
 
 -- Sun Rays (volumetric light shafts)
 local SunRays = Instance.new("SunRaysEffect")
-SunRays.Enabled = true
+SunRays.Enabled = false
 SunRays.Intensity = 0.35
 SunRays.Spread = 0.75
 SunRays.Parent = Lighting
 
 -- Depth of Field (cinematic blur)
 local DepthOfField = Instance.new("DepthOfFieldEffect")
-DepthOfField.Enabled = true
+DepthOfField.Enabled = false
 DepthOfField.FarIntensity = 0.55
 DepthOfField.NearIntensity = 0.15
 DepthOfField.FocusDistance = 45
@@ -225,14 +225,14 @@ DepthOfField.Parent = Lighting
 
 -- Motion Blur (movement feel)
 local MotionBlur = Instance.new("BlurEffect")
-MotionBlur.Enabled = true
+MotionBlur.Enabled = false
 MotionBlur.Size = 6
 MotionBlur.Parent = Lighting
 
 -- Film Grain (cinematic texture)
 -- Simulated via a subtle ColorCorrectionEffect layered on top
 local FilmGrain = Instance.new("ColorCorrectionEffect")
-FilmGrain.Contrast = 0.08
+FilmGrain.Contrast = 0
 FilmGrain.Saturation = 0.1
 FilmGrain.TintColor = Color3.fromRGB(255, 235, 255)
 FilmGrain.Enabled = true
