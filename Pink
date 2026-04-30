@@ -165,7 +165,7 @@ Lighting.EnvironmentSpecularScale = 1
 Lighting.GlobalShadows = true
 Lighting.ShadowSoftness = 0.25
 Lighting.ClockTime = 14
-Lighting.GeographicLatitude = 25
+Lighting.GeographicLatitude = 0
 Lighting.ExposureCompensation = -0.2  -- subtle exposure pull-down
 
 -- Skybox
@@ -182,29 +182,29 @@ Skybox.Parent = Lighting
 
 -- Atmosphere (RTX-style haze & scatter)
 local Atmosphere = Instance.new("Atmosphere")
-Atmosphere.Density = 0.45
+Atmosphere.Density = 0.1
 Atmosphere.Offset = 0.3
 Atmosphere.Color = Color3.fromRGB(255, 170, 215)
 Atmosphere.Decay = Color3.fromRGB(160, 85, 145)
-Atmosphere.Glare = 0.55
+Atmosphere.Glare = 0
 Atmosphere.Haze = 2.4
 Atmosphere.Parent = Lighting
 
 -- Bloom (punchy glow)
 local Bloom = Instance.new("BloomEffect")
-Bloom.Enabled = true
-Bloom.Intensity = 1.6
-Bloom.Size = 28
-Bloom.Threshold = 0.85
+Bloom.Enabled = false
+Bloom.Intensity = 0
+Bloom.Size = 0
+Bloom.Threshold = 0
 Bloom.Parent = Lighting
 
 -- Color Correction
 local ColorCorrection = Instance.new("ColorCorrectionEffect")
-ColorCorrection.Contrast = 0.05
+ColorCorrection.Contrast = 0
 ColorCorrection.TintColor = Color3.fromRGB(245, 220, 255)
 ColorCorrection.Saturation = 0.35
-ColorCorrection.Brightness = 0.02
-ColorCorrection.Enabled = true
+ColorCorrection.Brightness = 0
+ColorCorrection.Enabled = false
 ColorCorrection.Parent = Lighting
 
 -- Sun Rays (volumetric light shafts)
@@ -217,23 +217,23 @@ SunRays.Parent = Lighting
 -- Depth of Field (cinematic blur)
 local DepthOfField = Instance.new("DepthOfFieldEffect")
 DepthOfField.Enabled = false
-DepthOfField.FarIntensity = 0.55
-DepthOfField.NearIntensity = 0.15
-DepthOfField.FocusDistance = 45
-DepthOfField.InFocusRadius = 30
+DepthOfField.FarIntensity = 0
+DepthOfField.NearIntensity = 0
+DepthOfField.FocusDistance = 0
+DepthOfField.InFocusRadius = 0
 DepthOfField.Parent = Lighting
 
 -- Motion Blur (movement feel)
 local MotionBlur = Instance.new("BlurEffect")
 MotionBlur.Enabled = false
-MotionBlur.Size = 6
+MotionBlur.Size = 0
 MotionBlur.Parent = Lighting
 
 -- Film Grain (cinematic texture)
 -- Simulated via a subtle ColorCorrectionEffect layered on top
 local FilmGrain = Instance.new("ColorCorrectionEffect")
 FilmGrain.Contrast = 0
-FilmGrain.Saturation = 0.1
+FilmGrain.Saturation = 0
 FilmGrain.TintColor = Color3.fromRGB(255, 235, 255)
 FilmGrain.Enabled = true
 FilmGrain.Parent = Lighting
@@ -241,8 +241,8 @@ FilmGrain.Parent = Lighting
 -- Optional Clouds
 if not workspace.Terrain:FindFirstChildOfClass("Clouds") then
 	local Clouds = Instance.new("Clouds")
-	Clouds.Cover = 0.72
-	Clouds.Density = 0.62
+	Clouds.Cover = 0
+	Clouds.Density = 0
 	Clouds.Color = Color3.fromRGB(255, 140, 200)
 	Clouds.Parent = workspace.Terrain
 end
